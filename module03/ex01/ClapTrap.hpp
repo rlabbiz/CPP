@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 11:56:06 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/15 15:21:07 by rlabbiz          ###   ########.fr       */
+/*   Created: 2023/09/19 21:41:10 by rlabbiz           #+#    #+#             */
+/*   Updated: 2023/09/19 21:50:17 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include <iostream>
 
-#include "Contact.hpp"
-
-class PhoneBook{
+class ClapTrap {
 private:
-	Contact contact[8];
-
-public:
-	void	Search(void);
-	void	DisplayContact(void);
-	int		insertData(int index);
-};
-
-#endif 
+    
+}

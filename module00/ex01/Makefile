@@ -6,19 +6,28 @@
 #    By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 11:56:59 by rlabbiz           #+#    #+#              #
-#    Updated: 2023/09/08 15:31:44 by rlabbiz          ###   ########.fr        #
+#    Updated: 2023/09/18 23:04:38 by rlabbiz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-G++			= c++ -Wall -Wextra -Werror -std=c++98
+C++			= c++
+FLAGS		= -Wall -Wextra -Werror -std=c++98
 NAME		= phonebook
-SRC			= phonebook.cpp phonebook.class.cpp
-DFS			= phonebook.hpp
+OBJ			= main.o Contact.o PhoneBook.o
+DFS			= PhoneBook.hpp Contact.hpp
+
+%.o: %.cpp
+	$(C++) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
 
-$(NAME): $(SRC) $(DFS)
-	$(G++) $(SRC) -o $(NAME)
+$(NAME): $(OBJ) $(DFS)
+	$(C++) $(FLAGS) $(OBJ) -o $(NAME)
 
-fclean: 
+clean:
+	rm -rf $(OBJ)
+
+fclean: clean
 	rm -rf $(NAME)
+
+re: fclean all

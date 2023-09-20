@@ -1,62 +1,65 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:55:48 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/09 18:39:21 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/09/15 15:21:16 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
-std::string	get_line(std::string str){
-	std::string	line;
-
-	std::cout << str;
-	std::getline(std::cin, line);
-	while (line.empty()){
-		std::cout << str;
-		std::getline(std::cin, line);
+void	PhoneBook::Search(void){
+	int	i;
+	
+	i = 0;
+	while (i < 8){
+		contact[i].search(i);
+		i++;
 	}
-	return (line);
 }
 
-void	insertData(PhoneBook *phoneBook, int index){
-	phoneBook->contact[index].addContact(
-				get_line("First name: "),
-				get_line("Last name: "),
-				get_line("Nick name: "),
-				get_line("Phone number: "),
-				get_line("Darkest secret: ")
-			);
+void	PhoneBook::DisplayContact(void){
+	std::string index_str;
+    int         index_int;
+    
+    index_str = get_line("Index: ");
+	if (index_str.empty())
+		return ;
+    if ((index_str[0] && std::isalpha(index_str[0])) || index_str.length() > 1)
+        return ;
+	index_int = index_str[0] - 48;
+	if (index_int < 0 || index_int > 7)
+		return ;
+	contact[index_int].displayContact();
 }
 
-void	searchOfContact(PhoneBook *phoneBook){
-	phoneBook->Search();
-	phoneBook->DisplayContact();
-}
+int	PhoneBook::insertData(int index){
+	std::string	first, last, nick, darkest, phone;
 
-int main(void){
-	std::string	line;
-	PhoneBook	phoneBook;
-	int			index;
+	first	= get_line("First Name: ");
+	if (first.empty())
+		return 0;
+	last	= get_line("Last Name: ");
+	if (last.empty())
+		return 0;
+	nick 	= get_line("Nick Name: ");
+	if (nick.empty())
+		return 0;
+	phone	= get_line("Phone Number: ");
+	if (phone.empty())
+		return 0;
+	darkest	= get_line("Darkest Secret: ");
+	if (darkest.empty())
+		return 0;
 
-	index = 0;
-	while (std::cin){
-		std::cout << "Prompot: ";
-		getline(std::cin, line);
-		if (line == "EXIT")
-			exit(0);
-		if (line == "ADD"){
-			insertData(&phoneBook, index);
-			index++;
-		}
-		else if (line == "SEARCH")
-			searchOfContact(&phoneBook);
-		if (index == 8)
-			index = 0;
-	}
+	contact[index].setFirst(first);
+	contact[index].setLast(last);
+	contact[index].setNick(nick);
+	contact[index].setDarkest(darkest);
+	contact[index].setPhone(phone);
+	return 1;
 }

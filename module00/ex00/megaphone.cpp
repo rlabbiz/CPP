@@ -6,29 +6,33 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:58:06 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/06 11:58:08 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/09/15 10:26:01 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cctype>
+
+void	ft_toUpperStr(std::string str){
+	int	i = 0;
+
+	while (str[i]){
+		std::cout << (char )toupper(str[i]);
+		i++;
+	}
+}
 
 int main(int ac, char **av)
 {
-	int	i, j;
+	int	i;
 	if (ac <= 1){
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << '\n';
 		return (1);
 	}
 	i = 1;
 	while (av[i]){
-		j = 0;
-		while (av[i][j]){
-			std::cout << (char )toupper(av[i][j]);
-			j++;
-		}
+		ft_toUpperStr(av[i]);
 		i++;
 	}
-	std::cout << std::endl;
+	std::cout << '\n';
 	return (0);
 }
