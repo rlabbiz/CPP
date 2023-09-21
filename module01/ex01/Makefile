@@ -6,15 +6,18 @@
 #    By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/09 17:10:19 by rlabbiz           #+#    #+#              #
-#    Updated: 2023/09/10 13:14:58 by rlabbiz          ###   ########.fr        #
+#    Updated: 2023/09/21 00:05:49 by rlabbiz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-C++			= c++ -Wall -Wextra -Werror -std=c++98
+C++			= c++ 
+FLAGS       = -Wall -Wextra -Werror -std=c++98
 NAME		= Zombie
-SRC			= main.cpp Zombie.cpp zombieHorde.cpp
+OBJ			= main.o Zombie.o zombieHorde.o
 DFS			= Zombie.hpp
-OBJ			:= $(SRC:.cpp=.o)
+
+%.o: %.cpp
+	$(C++) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
 

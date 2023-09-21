@@ -6,14 +6,17 @@
 #    By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/09 17:10:19 by rlabbiz           #+#    #+#              #
-#    Updated: 2023/09/10 13:16:28 by rlabbiz          ###   ########.fr        #
+#    Updated: 2023/09/21 00:05:25 by rlabbiz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-C++			= c++ -Wall -Wextra -Werror -std=c++98
+C++			= c++
+FLAGS		= -Wall -Wextra -Werror -std=c++98
 NAME		= out
-SRC			= main.cpp
-OBJ			:= $(SRC:.cpp=.o)
+OBJ			= main.o
+
+%.o: %.cpp
+	$(C++) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
 

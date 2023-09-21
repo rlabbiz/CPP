@@ -5,29 +5,29 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/09 17:10:19 by rlabbiz           #+#    #+#              #
-#    Updated: 2023/09/21 00:06:48 by rlabbiz          ###   ########.fr        #
+#    Created: 2023/09/21 11:45:27 by rlabbiz           #+#    #+#              #
+#    Updated: 2023/09/21 13:18:14 by rlabbiz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-C++			= c++ 
+C++			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
-NAME		= out
-OBJ			= main.o Weapon.o HumanA.o HumanB.o
-DFS			= Weapon.hpp HumanA.hpp HumanB.hpp
+NAME		= fixed
+DFS			= Fixed.hpp
+OBJ			= main.o Fixed.o
 
 %.o: %.cpp
-	$(C++) $(FLAGS) -c $< -o $@
+	@$(C++) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
 
 $(NAME): $(MAIN_FILE) $(OBJ) $(DFS)
-	$(C++) $(MAIN_FILE) $(OBJ) -o $(NAME)
+	@$(C++) $(MAIN_FILE) $(OBJ) -o $(NAME)
 
 clean:
-	rm -rf $(OBJ)
+	@rm -rf $(OBJ)
 
 fclean: clean 
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
