@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:25:30 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/21 10:27:49 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/09/22 23:08:46 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int ac, char **av){
 	std::ofstream	newFile;
 
 	newFile.open("newFile.txt");
-	if (!newFile.is_open()){
+	if (!newFile.is_open() || !file.is_open()){
 		std::cout << "can't open the new file." << '\n';
 		return 1;
 	}
