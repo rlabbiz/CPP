@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 11:45:17 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/24 10:48:00 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/09/24 13:49:30 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,66 @@ Fixed::~Fixed() { std::cout << "Destructor called" << '\n'; }
 void    Fixed::operator=(const Fixed& next) {
     std::cout << "Copy assignment operator called" << '\n';
     fixedPoint = next.fixedPoint;
+}
+
+bool    Fixed::operator>(const Fixed& next) {
+    return fixedPoint > next.fixedPoint;
+}
+
+bool    Fixed::operator<(const Fixed& next) {
+    return fixedPoint < next.fixedPoint;
+}
+
+bool    Fixed::operator>=(const Fixed& next) {
+    return fixedPoint >= next.fixedPoint;
+}
+
+bool    Fixed::operator<=(const Fixed& next) {
+    return fixedPoint <= next.fixedPoint;
+}
+
+bool    Fixed::operator==(const Fixed& next) {
+    return fixedPoint == next.fixedPoint;
+}
+
+bool    Fixed::operator!=(const Fixed& next) {
+    return fixedPoint != next.fixedPoint;
+}
+
+float   Fixed::operator+(const Fixed& next) {
+    return fixedPoint + next.fixedPoint;
+}
+
+float   Fixed::operator-(const Fixed& next) {
+    return fixedPoint - next.fixedPoint;
+}
+
+float   Fixed::operator*(const Fixed& next) {
+    return fixedPoint * next.fixedPoint;
+}
+
+float   Fixed::operator/(const Fixed& next) {
+    return fixedPoint / next.fixedPoint;
+}
+
+Fixed    Fixed::operator++(int) {
+    Fixed tmp(*this);
+    ++fixedPoint;
+    return tmp;
+}
+
+Fixed    Fixed::operator++() {
+    Fixed tmp(*this);
+    ++fixedPoint;
+    return tmp;
+}
+
+void    Fixed::operator--() {
+    --fixedPoint;
+}
+
+void    Fixed::operator--(int) {
+    fixedPoint--;
 }
 
 int     Fixed::getRawBits(void) const {

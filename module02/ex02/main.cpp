@@ -5,23 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/09 17:21:53 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/24 00:29:55 by rlabbiz          ###   ########.fr       */
+/*   Created: 2023/09/21 11:45:25 by rlabbiz           #+#    #+#             */
+/*   Updated: 2023/09/24 13:50:19 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
-int main(void){
-
-	// Zombie  *zombie = new Zombie("curr");
-	
-	// zombie->announce();
-	
-	Zombie *tmp = zombieHorde(3, "tmp");
-	
-	// delete zombie;
-	delete[] tmp;
-
-	return 0;
+int main( void ) {
+    Fixed a;
+    Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+    
+    std::cout << a << std::endl;
+    std::cout << ++a << std::endl;
+    std::cout << a << std::endl;
+    std::cout << a++ << std::endl;
+    std::cout << a << std::endl;
+    std::cout << b << std::endl;
+    
+    std::cout << Fixed::max( a, b ) << std::endl;
+    return 0;
 }

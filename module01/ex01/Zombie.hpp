@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 17:23:44 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/10 12:13:12 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/09/24 00:28:13 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ public:
 
 	void	announce(void);
 	void	setName(std::string name);
-	Zombie	*zombieHorde(int N, std::string name);
 };
+
+Zombie	*zombieHorde(int N, std::string name);
 
 #endif
