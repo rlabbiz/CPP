@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 11:45:17 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/24 13:49:30 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/09/25 15:48:16 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,15 @@ bool    Fixed::operator!=(const Fixed& next) {
 }
 
 float   Fixed::operator+(const Fixed& next) {
-    return fixedPoint + next.fixedPoint;
+    return this->toFloat() + next.toFloat();
 }
 
 float   Fixed::operator-(const Fixed& next) {
-    return fixedPoint - next.fixedPoint;
+    return this->toFloat() - next.toFloat();
 }
 
 float   Fixed::operator*(const Fixed& next) {
-    return fixedPoint * next.fixedPoint;
+    return this->toFloat() * next.toFloat();
 }
 
 float   Fixed::operator/(const Fixed& next) {
@@ -94,6 +94,30 @@ void    Fixed::operator--() {
 
 void    Fixed::operator--(int) {
     fixedPoint--;
+}
+
+Fixed& Fixed::min(Fixed &a, Fixed &b) {
+    if (a < b)
+        return a;
+    return b;
+}
+
+const Fixed& Fixed::min(const Fixed &a, const Fixed &b) {
+    if (a.fixedPoint < b.fixedPoint)
+        return a;
+    return b;
+}
+
+Fixed& Fixed::max(Fixed &a, Fixed &b) {
+    if (a > b)
+        return a;
+    return b;
+}
+
+const Fixed& Fixed::max(const Fixed &a, const Fixed &b) {
+    if (a.fixedPoint > b.fixedPoint)
+        return a;
+    return b;
 }
 
 int     Fixed::getRawBits(void) const {

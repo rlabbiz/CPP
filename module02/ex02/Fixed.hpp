@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 11:45:23 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/24 14:50:14 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/09/25 15:21:16 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,17 @@ public:
     Fixed(const int raw);
     Fixed(const float raw);
     Fixed(const Fixed &tmp);
+    
+    static Fixed &min(Fixed &a, Fixed &b);
+    static const Fixed &min(const Fixed &a, const Fixed &b);
 
+    static Fixed &max(Fixed &a, Fixed &b);
+    static const Fixed &max(const Fixed &a, const Fixed &b);
+    
     int     getRawBits(void) const;
     void    setRawBits(int const raw);
     float   toFloat( void) const;
     int     toInt(void) const;
-
     
 };
 
