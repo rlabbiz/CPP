@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:03:14 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/12 16:22:56 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/09/27 15:42:51 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	Weapon(std::string str);
 	~Weapon(void);
 	void		setType(std::string	str);
-	std::string	getType(void) const;
+	const std::string	&getType(void) const;
 };
 
 #endif

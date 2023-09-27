@@ -6,7 +6,7 @@
 #    By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/09 17:10:19 by rlabbiz           #+#    #+#              #
-#    Updated: 2023/09/21 00:05:49 by rlabbiz          ###   ########.fr        #
+#    Updated: 2023/09/27 15:18:06 by rlabbiz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME		= Zombie
 OBJ			= main.o Zombie.o zombieHorde.o
 DFS			= Zombie.hpp
 
-%.o: %.cpp
+%.o: %.cpp $(DFS)
 	$(C++) $(FLAGS) -c $< -o $@
 
 all : $(NAME)

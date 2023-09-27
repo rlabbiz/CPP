@@ -6,17 +6,15 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 10:35:25 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/21 11:21:18 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/09/27 16:05:56 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "harl.hpp"
+#include "Harl.hpp"
 
-int main(void) {
+int main(int ac, char **av) {
     Harl harl;
 
-    harl.complain("DEBUG");
-    harl.complain("INFO");
-    harl.complain("WARNING");
-    harl.complain("ERROR");
+    if (ac > 1)
+        harl.complain(av[1]);
 }

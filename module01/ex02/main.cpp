@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 13:16:42 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/20 23:50:51 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/09/26 15:32:16 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,4 @@ int	main(void){
 	std::cout << '\t' << "The value of the string variable: " << str << '\n';
 	std::cout << '\t' << "The value pointed to by stringPTR: " << *stringPTR << '\n';
 	std::cout << '\t' << "The value pointed to by stringREF: " << stringREF << '\n';
-		
 }
