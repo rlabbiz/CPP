@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 11:45:23 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/24 10:48:54 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/09/29 16:40:35 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
     Fixed();
     ~Fixed();
 
-    void    operator=(const Fixed& next);
+    Fixed&    operator=(const Fixed& next);
 
     Fixed(const int raw);
     Fixed(const float raw);

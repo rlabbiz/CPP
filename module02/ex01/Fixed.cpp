@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 11:45:17 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/24 10:48:00 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/09/29 16:56:25 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ Fixed::Fixed(const Fixed &tmp) {
 
 Fixed::~Fixed() { std::cout << "Destructor called" << '\n'; }
 
-void    Fixed::operator=(const Fixed& next) {
+Fixed&  Fixed::operator=(const Fixed& next) {
     std::cout << "Copy assignment operator called" << '\n';
     fixedPoint = next.fixedPoint;
+    return (*this);
 }
 
 int     Fixed::getRawBits(void) const {
@@ -51,7 +52,7 @@ float   Fixed::toFloat(void) const {
 }
 
 int     Fixed::toInt(void) const {
-    return fixedPoint / (1 << fractional);
+    return fixedPoint / (std::pow(2.0f, fractional));
 }
 
 std::ostream & operator << (std::ostream &out, const Fixed &curr) {

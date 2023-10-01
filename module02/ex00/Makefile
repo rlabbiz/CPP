@@ -6,7 +6,7 @@
 #    By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 11:45:27 by rlabbiz           #+#    #+#              #
-#    Updated: 2023/09/21 11:46:16 by rlabbiz          ###   ########.fr        #
+#    Updated: 2023/09/29 16:26:22 by rlabbiz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME		= fixed
 DFS			= Fixed.hpp
 OBJ			= main.o Fixed.o
 
-%.o: %.cpp
+%.o: %.cpp $(DFS)
 	@$(C++) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
