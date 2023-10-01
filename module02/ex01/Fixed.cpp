@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 11:45:17 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/29 16:56:25 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/01 20:23:20 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Fixed::Fixed() : fixedPoint(0) { std::cout << "Default constructor called" << '\
 
 Fixed::Fixed(const int num) {
     std::cout << "Int constructor called" << '\n';
-    fixedPoint = num << fractional;
+    fixedPoint = num * std::pow(2.0f, fractional);
 }
 
 Fixed::Fixed(const float num) {
