@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 11:45:17 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/01 20:23:20 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/02 13:10:16 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Fixed::Fixed(const float num) {
 
 Fixed::Fixed(const Fixed &tmp) {
     std::cout << "Copy constructor called" << '\n';
-    fixedPoint = tmp.fixedPoint;
+    (*this) = tmp;
 }
 
 Fixed::~Fixed() { std::cout << "Destructor called" << '\n'; }
