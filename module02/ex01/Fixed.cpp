@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 11:45:17 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/02 13:10:16 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/03 15:49:53 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void    Fixed::setRawBits(int const raw) {
 }
 
 float   Fixed::toFloat(void) const {
-    return fixedPoint * (1.0f / std::pow(2.0f, fractional));
+    return fixedPoint / std::pow(2.0f, fractional);
 }
 
 int     Fixed::toInt(void) const {

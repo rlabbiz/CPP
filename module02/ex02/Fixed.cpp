@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 11:45:17 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/25 15:48:16 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/03 20:40:31 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ Fixed    Fixed::operator++(int) {
 }
 
 Fixed    Fixed::operator++() {
-    Fixed tmp(*this);
     ++fixedPoint;
+    Fixed tmp(*this);
     return tmp;
 }
 
