@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 11:45:17 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/03 20:40:31 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/05 10:30:36 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,15 @@ Fixed::Fixed(const float num) {
 
 Fixed::Fixed(const Fixed &tmp) {
     std::cout << "Copy constructor called" << '\n';
-    fixedPoint = tmp.fixedPoint;
+    (*this) = tmp;
 }
 
 Fixed::~Fixed() { std::cout << "Destructor called" << '\n'; }
 
-void    Fixed::operator=(const Fixed& next) {
+Fixed&  Fixed::operator=(const Fixed& next) {
     std::cout << "Copy assignment operator called" << '\n';
     fixedPoint = next.fixedPoint;
+    return (*this);
 }
 
 bool    Fixed::operator>(const Fixed& next) {
@@ -60,20 +61,32 @@ bool    Fixed::operator!=(const Fixed& next) {
     return fixedPoint != next.fixedPoint;
 }
 
-float   Fixed::operator+(const Fixed& next) {
-    return this->toFloat() + next.toFloat();
+Fixed   Fixed::operator+(const Fixed& next) {
+    Fixed   tmp;
+
+    tmp.fixedPoint = fixedPoint + next.fixedPoint;
+    return tmp;
 }
 
-float   Fixed::operator-(const Fixed& next) {
-    return this->toFloat() - next.toFloat();
+Fixed   Fixed::operator-(const Fixed& next) {
+    Fixed   tmp;
+
+    tmp.fixedPoint = fixedPoint - next.fixedPoint;
+    return tmp;
 }
 
-float   Fixed::operator*(const Fixed& next) {
-    return this->toFloat() * next.toFloat();
+Fixed   Fixed::operator*(const Fixed& next) {
+    Fixed tmp;
+
+    tmp.fixedPoint = this->fixedPoint * next.fixedPoint / std::pow(2, fractional);
+    return tmp;
 }
 
-float   Fixed::operator/(const Fixed& next) {
-    return fixedPoint / next.fixedPoint;
+Fixed   Fixed::operator/(const Fixed& next) {
+    Fixed   tmp;
+
+    tmp.fixedPoint = fixedPoint / next.fixedPoint;
+    return tmp;
 }
 
 Fixed    Fixed::operator++(int) {
@@ -84,16 +97,18 @@ Fixed    Fixed::operator++(int) {
 
 Fixed    Fixed::operator++() {
     ++fixedPoint;
-    Fixed tmp(*this);
-    return tmp;
+    return (*this);
 }
 
-void    Fixed::operator--() {
+Fixed    Fixed::operator--() {
     --fixedPoint;
+    return (*this);
 }
 
-void    Fixed::operator--(int) {
+Fixed   Fixed::operator--(int)  {
+    Fixed tmp(*this);
     fixedPoint--;
+    return (tmp);
 }
 
 Fixed& Fixed::min(Fixed &a, Fixed &b) {

@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 11:45:23 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/09/25 15:21:16 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/05 10:28:37 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
     Fixed();
     ~Fixed();
 
-    void    operator=(const Fixed& next);
+    Fixed&  operator=(const Fixed& next);
     
     bool    operator>(const Fixed& next);
     bool    operator<(const Fixed& next);
@@ -31,15 +31,15 @@ public:
     bool    operator==(const Fixed& next);
     bool    operator!=(const Fixed& next);
 
-    float   operator+(const Fixed& next);
-    float   operator-(const Fixed& next);
-    float   operator*(const Fixed& next);
-    float   operator/(const Fixed& next);
+    Fixed   operator+(const Fixed& next);
+    Fixed   operator-(const Fixed& next);
+    Fixed   operator*(const Fixed& next);
+    Fixed   operator/(const Fixed& next);
 
     Fixed   operator++();
     Fixed   operator++(int);
-    void    operator--();
-    void    operator--(int);
+    Fixed   operator--();
+    Fixed   operator--(int);
 
     Fixed(const int raw);
     Fixed(const float raw);
