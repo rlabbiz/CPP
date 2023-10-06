@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 11:45:17 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/05 10:30:36 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/06 12:57:35 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Fixed::Fixed(const int num) {
 
 Fixed::Fixed(const float num) {
     std::cout << "Float constructor called" << '\n';
-    fixedPoint = std::round(num * std::pow(2.0f, fractional));
+    fixedPoint = std::roundf(num * std::pow(2.0f, fractional));
 }
 
 Fixed::Fixed(const Fixed &tmp) {
@@ -107,7 +107,7 @@ Fixed    Fixed::operator--() {
 
 Fixed   Fixed::operator--(int)  {
     Fixed tmp(*this);
-    fixedPoint--;
+    --fixedPoint;
     return (tmp);
 }
 
