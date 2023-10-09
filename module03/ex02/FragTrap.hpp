@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 21:41:13 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/09 11:26:12 by rlabbiz          ###   ########.fr       */
+/*   Created: 2023/10/08 19:11:57 by rlabbiz           #+#    #+#             */
+/*   Updated: 2023/10/09 14:44:42 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
-int main(void){
-    ScavTrap clap("first");
+class FragTrap : public ClapTrap {
+public:
+    FragTrap();
+    FragTrap(std::string name);
+    FragTrap(const FragTrap& tmp);
+    ~FragTrap();
     
-    clap.showInfo();
-    clap.takeDamage(5);
-    clap.showInfo();
-    clap.attack("attack1");
-    clap.showInfo();
-    clap.beRepaired(5);
-    clap.showInfo();
-}
+    FragTrap&   operator = (const FragTrap& next);
+    
+    void    highFivesGuys(void);
+};

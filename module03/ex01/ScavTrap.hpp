@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 21:41:13 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/09 11:26:12 by rlabbiz          ###   ########.fr       */
+/*   Created: 2023/10/07 12:55:50 by rlabbiz           #+#    #+#             */
+/*   Updated: 2023/10/08 12:41:33 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
-int main(void){
-    ScavTrap clap("first");
-    
-    clap.showInfo();
-    clap.takeDamage(5);
-    clap.showInfo();
-    clap.attack("attack1");
-    clap.showInfo();
-    clap.beRepaired(5);
-    clap.showInfo();
-}
+class ScavTrap : public ClapTrap {
+public:
+    ScavTrap();
+    ScavTrap(std::string name);
+    ScavTrap(const ScavTrap &tmp);
+    ~ScavTrap();
+
+    ScavTrap    &operator = (const ScavTrap &next);
+
+    void    guardGate();
+};

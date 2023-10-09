@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 21:41:04 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/09 12:58:17 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/09 13:47:35 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 ClapTrap::ClapTrap() {
     std::cout << "ClapTrap: Defualt constructor called" << '\n';
-    hitPoint        = 10;
-    energyPoint     = 10;
-    attackDamage    = 0;
+    hitPoint        = 100;
+    energyPoint     = 100;
+    attackDamage    = 30;
 }
 
 ClapTrap::ClapTrap(std::string str) : name(str) {
     std::cout << "ClapTrap: constructor called" << '\n';
-    hitPoint        = 10;
-    energyPoint     = 10;
-    attackDamage    = 0;
+    hitPoint        = 100;
+    energyPoint     = 100;
+    attackDamage    = 30;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& tmp){

@@ -6,15 +6,15 @@
 #    By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/19 21:41:15 by rlabbiz           #+#    #+#              #
-#    Updated: 2023/10/07 13:08:29 by rlabbiz          ###   ########.fr        #
+#    Updated: 2023/10/09 12:35:57 by rlabbiz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 C++			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
-NAME		= ScavTrap
-DFS			= ClapTrap.hpp ScavTrap.hpp
-OBJ			= main.o ClapTrap.o ScavTrap.o
+NAME		= FragTrap
+DFS			= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
+OBJ			= main.o ClapTrap.o ScavTrap.o FragTrap.o
 
 %.o: %.cpp $(DFS)
 	$(C++) $(FLAGS) -c $< -o $@
