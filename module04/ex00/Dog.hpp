@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 21:41:13 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/09 21:47:11 by rlabbiz          ###   ########.fr       */
+/*   Created: 2023/10/09 15:48:23 by rlabbiz           #+#    #+#             */
+/*   Updated: 2023/10/09 17:50:06 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
 
-int main(void){
-    ClapTrap clap("first");
-    
-    clap.showInfo();
-    clap.takeDamage(5);
-    clap.showInfo();
-    clap.attack("attack1");
-    clap.showInfo();
-    clap.beRepaired(5);
-    clap.showInfo();
-}
+#include "Animal.hpp"
+
+class Dog : public Animal {
+public:
+    Dog();
+    Dog(std::string str);
+    Dog(const Dog& tmp);
+    ~Dog();
+
+    Dog& operator = (const Dog& next);
+
+    void    makeSound(void) const;
+};
+
+#endif

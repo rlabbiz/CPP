@@ -6,9 +6,12 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:55:50 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/08 12:41:33 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/10 15:38:26 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 
@@ -23,3 +26,5 @@ public:
 
     void    guardGate();
 };
+
+#endif

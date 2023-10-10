@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 21:41:04 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/09 12:58:17 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/10 15:17:37 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ClapTrap::ClapTrap(const ClapTrap& tmp){
     (*this) = tmp;
 }
 
-ClapTrap::~ClapTrap() { std::cout << "Destructor called" << '\n'; }
+ClapTrap::~ClapTrap() { std::cout << "ClapTrap: Destructor called" << '\n'; }
 
 ClapTrap&    ClapTrap::operator = (const ClapTrap &next) {
     std::cout << "ClapTrap: Copy assignment operator called" << '\n';
@@ -44,31 +44,31 @@ ClapTrap&    ClapTrap::operator = (const ClapTrap &next) {
 
 void    ClapTrap::attack(const std::string& target) {
     if (hitPoint <= 0 || energyPoint <= 0){
-        std::cout << "Can't do anything, No points left." << '\n';
+        std::cout << "ClapTrap: Can't do anything, No points left." << '\n';
         return ;
     }
+    std::cout << "ClapTrap " << name << " attacks " << target << " causing " << attackDamage << " points of damage!" << '\n';
     hitPoint -= attackDamage;
     energyPoint--;
-    std::cout << "ClapTrap " << name << " attacks " << target << " causing " << attackDamage << " points of damage!" << '\n';
 }
 
 void    ClapTrap::takeDamage(unsigned int amout) {
     if (hitPoint <= 0 || energyPoint <= 0){
-        std::cout << "Can't do anything, No points left." << '\n';
+        std::cout << "ClapTrap: Can't do anything, No points left." << '\n';
         return ;
     }
-    attackDamage = amout;
     std::cout << "ClapTrap " << name << " take damage " << amout << "\n";
+    attackDamage = amout;
 }
 
 void    ClapTrap::beRepaired(unsigned int amout) {
     if (hitPoint <= 0 || energyPoint <= 0){
-        std::cout << "Can't do anything, No points left." << '\n';
+        std::cout << "ClapTrap: Can't do anything, No points left." << '\n';
         return ;
     }
+    std::cout << "ClapTrap " << name << " be repaired " << amout << "\n";
     hitPoint += amout;
     energyPoint--;
-    std::cout << "ClapTrap " << name << " be repaired " << amout << "\n";
 }
 
 void    ClapTrap::showInfo(void) {

@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 21:41:13 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/09 21:47:11 by rlabbiz          ###   ########.fr       */
+/*   Created: 2023/10/09 15:48:07 by rlabbiz           #+#    #+#             */
+/*   Updated: 2023/10/09 17:51:24 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
 
-int main(void){
-    ClapTrap clap("first");
+#include "Animal.hpp"
+
+class Cat : public Animal {
+public:
+    Cat();
+    Cat(std::string str);
+    Cat(const Cat& tmp);
+    ~Cat();
+
+    Cat& operator = (const Cat& next);
     
-    clap.showInfo();
-    clap.takeDamage(5);
-    clap.showInfo();
-    clap.attack("attack1");
-    clap.showInfo();
-    clap.beRepaired(5);
-    clap.showInfo();
-}
+    void    makeSound(void) const;
+
+};
+
+#endif

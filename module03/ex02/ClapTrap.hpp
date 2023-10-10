@@ -6,9 +6,12 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 21:41:10 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/09 11:57:23 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/10 15:42:29 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
 
@@ -33,3 +36,5 @@ public:
 
     void    showInfo(void);
 };
+
+#endif

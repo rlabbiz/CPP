@@ -6,14 +6,17 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 21:41:10 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/02 15:23:44 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/10 15:40:25 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
 
 class ClapTrap {
-private:
+protected:
     std::string name;
     int    hitPoint;
     int    energyPoint;
@@ -27,17 +30,11 @@ public:
     
     ClapTrap&    operator = (const ClapTrap &next);
     
-    int    getHitPoint(void) const;
-    int    getEnergyPoint(void) const;
-    int    getAttackDamage(void) const;
-
-    void    setHitPoint(int amout);
-    void    setEnergyPoint(int amout);
-    void    setAttackDamage(int amout);
-    
     void    attack(const std::string& target);
     void    takeDamage(unsigned int amount);
     void    beRepaired(unsigned int amount);
 
     void    showInfo(void);
 };
+
+#endif
