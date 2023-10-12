@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 15:47:59 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/11 10:01:55 by rlabbiz          ###   ########.fr       */
+/*   Created: 2023/10/09 15:48:13 by rlabbiz           #+#    #+#             */
+/*   Updated: 2023/10/11 10:48:11 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-#include <iostream>
-
-class Animal {
-protected:
-    std::string type;
-public:
-    Animal();
-    Animal(std::string str);
-    Animal(const Animal& tmp);
-    virtual ~Animal();
+int main()
+{
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    delete j;//should not create a leak
+    delete i;
     
-    Animal& operator = (const Animal& next);
-
-    std::string getType(void) const;
-
-    virtual void makeSound(void) const;
-};
-
-#endif
+    return 0;
+}

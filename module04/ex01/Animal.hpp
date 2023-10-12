@@ -6,14 +6,14 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:47:59 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/11 10:01:55 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/11 10:53:08 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 
-#include <iostream>
+#include "Brain.hpp"
 
 class Animal {
 protected:

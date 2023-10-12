@@ -6,7 +6,7 @@
 #    By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/09 17:10:19 by rlabbiz           #+#    #+#              #
-#    Updated: 2023/09/27 15:18:06 by rlabbiz          ###   ########.fr        #
+#    Updated: 2023/10/11 11:30:44 by rlabbiz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ DFS			= Zombie.hpp
 
 all : $(NAME)
 
-$(NAME): $(MAIN_FILE) $(OBJ) $(DFS)
+$(NAME): $(OBJ)
 	$(C++) $(MAIN_FILE) $(OBJ) -o $(NAME)
 
 clean:

@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:55:52 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/09 12:35:01 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/11 12:59:37 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ ScavTrap::~ScavTrap() { std::cout << "ScavTrap: destructor called." << '\n'; }
 
 ScavTrap&   ScavTrap::operator = (const ScavTrap &next) {
     std::cout << "ScavTrap: copy assimgnet operator constructor called." << '\n';
+    if (this == &next)
+        return *this;
     this->attackDamage = next.attackDamage;
     this->energyPoint = next.energyPoint;
     this->hitPoint = next.hitPoint;

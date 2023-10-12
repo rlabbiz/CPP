@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 21:41:04 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/10 15:17:37 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/11 12:42:18 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ ClapTrap::~ClapTrap() { std::cout << "ClapTrap: Destructor called" << '\n'; }
 
 ClapTrap&    ClapTrap::operator = (const ClapTrap &next) {
     std::cout << "ClapTrap: Copy assignment operator called" << '\n';
+    if (this == &next)
+        return *this;
     name            = next.name;
     hitPoint        = next.hitPoint;
     energyPoint     = next.energyPoint;
@@ -43,12 +45,11 @@ ClapTrap&    ClapTrap::operator = (const ClapTrap &next) {
 }
 
 void    ClapTrap::attack(const std::string& target) {
+    std::cout << "ClapTrap " << name << " attacks " << target << " causing " << attackDamage << " points of damage!" << '\n';
     if (hitPoint <= 0 || energyPoint <= 0){
         std::cout << "ClapTrap: Can't do anything, No points left." << '\n';
         return ;
     }
-    std::cout << "ClapTrap " << name << " attacks " << target << " causing " << attackDamage << " points of damage!" << '\n';
-    hitPoint -= attackDamage;
     energyPoint--;
 }
 
@@ -58,7 +59,7 @@ void    ClapTrap::takeDamage(unsigned int amout) {
         return ;
     }
     std::cout << "ClapTrap " << name << " take damage " << amout << "\n";
-    attackDamage = amout;
+    hitPoint -= amout;
 }
 
 void    ClapTrap::beRepaired(unsigned int amout) {

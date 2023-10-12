@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:55:50 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/10 15:38:26 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/11 14:38:30 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ public:
 
     ScavTrap    &operator = (const ScavTrap &next);
 
+    void    attack(const std::string& target);
     void    guardGate();
 };
 

@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:55:52 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/09 12:03:07 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/11 15:12:03 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,21 @@ ScavTrap::~ScavTrap() { std::cout << "ScavTrap: destructor called." << '\n'; }
 
 ScavTrap&   ScavTrap::operator = (const ScavTrap &next) {
     std::cout << "ScavTrap: copy assimgnet operator constructor called." << '\n';
+    if (this == &next)
+        return *this;
     this->attackDamage = next.attackDamage;
     this->energyPoint = next.energyPoint;
     this->hitPoint = next.hitPoint;
     return (*this);
+}
+
+void    ScavTrap::attack(const std::string& target) {
+    std::cout << "ScavTrap: " << name << " attacks " << target << " causing " << attackDamage << " points of damage!" << '\n';
+    if (hitPoint <= 0 || energyPoint <= 0){
+        std::cout << "ClapTrap: Can't do anything, No points left." << '\n';
+        return ;
+    }
+    energyPoint--;
 }
 
 void    ScavTrap::guardGate() {
