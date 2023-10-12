@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:48:23 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/09 17:50:06 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/12 14:06:56 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 #include "Animal.hpp"
 
 class Dog : public Animal {
+private:
+    Brain *brain;
 public:
     Dog();
     Dog(std::string str);
     Dog(const Dog& tmp);
-    ~Dog();
+    ~Dog(); 
 
     Dog& operator = (const Dog& next);
 
