@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 19:11:53 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/11 12:59:07 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/13 13:05:26 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,8 @@ FragTrap&   FragTrap::operator = (const FragTrap& next) {
     this->attackDamage  = next.attackDamage;
     
     return *this;
+}
+
+void    FragTrap::highFivesGuys() {
+    std::cout << "FragTrap : " << this->name << " is now in Gate keeper mode" << '\n';
 }
