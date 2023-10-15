@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:22:37 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/11 10:44:50 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/15 15:16:21 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,15 @@ Brain::~Brain() { std::cout << "Brain: Destructor called." << '\n'; }
 
 Brain &Brain::operator = (const Brain &next) {
     std::cout << "Brain: Assignment Operator called." << '\n';
+    if (this == &next)
+        return *this;
+    
     int i = 0;
 
     while (i < 100){
         this->ideas[i] = next.ideas[i];
         i++;
     }
+    
     return *this;
 }

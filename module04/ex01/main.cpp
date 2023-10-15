@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:48:13 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/13 15:17:39 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/15 15:11:30 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main(void) {
     
     int     i = 0;
-    int     objLen = 4;
+    int     objLen = 6;
     Animal  *animals[objLen];
     
     while (i < objLen / 2) {
