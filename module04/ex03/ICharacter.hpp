@@ -17,6 +17,9 @@
 
 class ICharacter
 {
+protected:
+    std::string name;
+
 public:
     virtual ICharacter();
     virtual ICharacter(ICharacter const & tmp);

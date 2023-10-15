@@ -16,7 +16,7 @@ AMateria::AMateria() {
     std::cout << "AMateria: Default constructor called." << '\n';
 }
 
-AMateria::AMateria(std::string & type) : type(type) {
+AMateria::AMateria(std::string const & type) : type(type) {
     std::cout << "AMateria: constructor called." << '\n';
 }
 
@@ -36,4 +36,6 @@ AMateria &  AMateria::operator = (const AMateria & next) {
     this->type = next.type;
     return *this;
 }
+
+std::string const & AMateria::getType() const { return this->type; }
 

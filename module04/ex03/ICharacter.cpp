@@ -10,3 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "main.cpp"
+
+ICharacter::ICharacter() { std::cout << "ICharacter: Default constructor called." << '\n'; }
+
+ICharacter::ICharacter(ICharacter const & tmp) {
+    std::cout << "ICharacter: Copy constructor called." << '\n';
+    *this = tmp;
+}
+
+ICharacter::~ICharacter() { std::cout << "ICbaracter:: Destructor called." << '\n'; }
+

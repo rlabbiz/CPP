@@ -13,8 +13,8 @@
 C++			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 NAME		= AMateria
-DFS			= AMateria.hpp 
-OBJ			= main.o AMateria.o
+DFS			= AMateria.hpp ICharacter.hpp
+OBJ			= main.o AMateria.o ICharacter.o
 
 %.o: %.cpp $(DFS)
 	$(C++) $(CFLAGS) -c $< -o $@
