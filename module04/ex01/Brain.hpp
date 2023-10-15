@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:22:39 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/11 10:37:19 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/15 15:22:38 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ protected:
 
 public:
     Brain();
-    // Brain(std::string   ideas[100]);
+    // Brain(std::string   _ideas[100]);
     Brain(const Brain &tmp);
     ~Brain();
 

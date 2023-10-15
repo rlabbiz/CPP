@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:48:13 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/13 15:17:39 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/10/15 15:46:42 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,38 @@
 
 int main(void) {
     
-    int     i = 0;
-    int     objLen = 4;
-    Animal  *animals[objLen];
+    // int     i = 0;
+    // int     objLen = 4;
+    // Animal  *animals[objLen];
     
-    while (i < objLen / 2) {
-        animals[i] = new Cat("Cat");
-        i++;
-    }
+    // while (i < objLen / 2) {
+    //     animals[i] = new Cat("Cat");
+    //     i++;
+    // }
     
-    while (i < objLen) {
-        animals[i] = new Dog("Dog");
-        i++;
-    }
+    // while (i < objLen) {
+    //     animals[i] = new Dog("Dog");
+    //     i++;
+    // }
     
-    i = 0;
+    // i = 0;
 
-    while (i < objLen) {
-        animals[i]->makeSound();
-        i++;
-    }
+    // while (i < objLen) {
+    //     animals[i]->makeSound();
+    //     i++;
+    // }
     
-    i = 0;
+    // i = 0;
     
-    while (i < objLen) {
-        delete animals[i];
-        i++;
-    }
-    return 0;
+    // while (i < objLen) {
+    //     delete animals[i];
+    //     i++;
+    // }
+    // return 0;
+
+    Animal *a = new Animal(dfg);
+
+    a->makeSound();
 }
 
 // int main()
