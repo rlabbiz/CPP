@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 16:24:16 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/07 12:09:19 by rlabbiz          ###   ########.fr       */
+/*   Created: 2023/11/07 20:51:46 by rlabbiz           #+#    #+#             */
+/*   Updated: 2023/11/08 15:36:22 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef BASE_HPP
+#define BASE_HPP
 
-int main(int ac, char **av) {
+#include <iostream>
+#include <cstdlib>
+#include <exception>
 
-    if (ac < 2)
-        return 1;
-    ScalarConverter convert;
+class Base {
+public:
+    virtual ~Base() {}
+};
 
-    convert.convert(av[1]);
-    std::cout << convert;
-    return 0;
-}
+class A : public Base { };
+
+class B : public Base { };
+
+class C : public Base { };
+
+Base*   generate(void);
+
+void    identify(Base* p);
+
+void    identify(Base& p);
+
+#endif
