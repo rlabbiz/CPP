@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 16:24:16 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/13 08:56:30 by rlabbiz          ###   ########.fr       */
+/*   Created: 2023/11/13 08:56:39 by rlabbiz           #+#    #+#             */
+/*   Updated: 2023/11/13 09:38:52 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef MAIN_HPP
+#define MAIN_HPP
 
-int main(int ac, char **av) {
+#include <iostream>
 
-    if (ac < 2)
-        return 1;
-    ScalarConverter convert;
+struct Data {
+    int x;
+    int y;
+};
 
-    convert.convert(av[1]);
-    std::cout << convert;
-    return 0;
-}
+uintptr_t   serialize(Data* ptr);
+Data*       deserialize(uintptr_t raw);
+
+#endif

@@ -6,15 +6,15 @@
 #    By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/19 21:41:15 by rlabbiz           #+#    #+#              #
-#    Updated: 2023/11/07 12:12:32 by rlabbiz          ###   ########.fr        #
+#    Updated: 2023/11/13 08:56:56 by rlabbiz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 C++			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
-NAME		= Bureaucrat
-DFS			= Bureaucrat.hpp Form.hpp
-OBJ			= main.o Bureaucrat.o Form.o
+NAME		= out
+DFS			= main.hpp
+OBJ			= main.o
 
 %.o: %.cpp $(DFS)
 	$(C++) $(FLAGS) -c $< -o $@
