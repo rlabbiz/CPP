@@ -6,13 +6,13 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:26:38 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/27 15:53:27 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/13 14:01:05 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : Form("default",25, 5), _target("default"){}
+PresidentialPardonForm::PresidentialPardonForm() : Form("default", 25, 5), _target("default"){}
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form(target + "_form", 25, 5), _target(target) {}
 

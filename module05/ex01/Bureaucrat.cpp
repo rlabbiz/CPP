@@ -6,38 +6,41 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 17:07:12 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/26 13:42:16 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/13 11:54:08 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("default"), grade(150) {};
+Bureaucrat::Bureaucrat() : name("default"), grade(150) {}
 
 Bureaucrat::Bureaucrat(std::string _name) : name(_name), grade(150) { }
 
-Bureaucrat::Bureaucrat(int _grade) : name("default"), grade(_grade) {
+Bureaucrat::Bureaucrat(int _grade) : name("default") {
     if (_grade < 1)
         throw Bureaucrat::GradeTooHighException();
     else if (_grade > 150)
         throw Bureaucrat::GradeTooLowException();
+    this->grade = _grade;
 }
 
-Bureaucrat::Bureaucrat(int _grade, std::string _name) : name(_name), grade(_grade) {
+Bureaucrat::Bureaucrat(int _grade, std::string _name) : name(_name) {
     if (_grade < 1)
         throw Bureaucrat::GradeTooHighException();
     else if (_grade > 150)
         throw Bureaucrat::GradeTooLowException();
+    this->grade = _grade;
 }
 
-Bureaucrat::Bureaucrat(std::string _name, int _grade) : name(_name), grade(_grade) {
+Bureaucrat::Bureaucrat(std::string _name, int _grade) : name(_name) {
     if (_grade < 1)
         throw Bureaucrat::GradeTooHighException();
     else if (_grade > 150)
         throw Bureaucrat::GradeTooLowException();
+    this->grade = _grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat & tmp) {
+Bureaucrat::Bureaucrat(const Bureaucrat & tmp) : name(tmp.getName()) {
     *this = tmp;
 }
 

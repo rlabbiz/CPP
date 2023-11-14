@@ -6,15 +6,15 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 17:07:41 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/25 17:07:42 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/14 11:06:47 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("default"), grade(150) {};
+Bureaucrat::Bureaucrat() : name("default"), grade(150) {}
 
-Bureaucrat::Bureaucrat(std::string _name) : name(_name), grade(150) { }
+Bureaucrat::Bureaucrat(std::string _name) : name(_name), grade(150) {}
 
 Bureaucrat::Bureaucrat(int _grade) : name("default"), grade(_grade) {
     if (_grade < 1)

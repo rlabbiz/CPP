@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 17:07:12 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/27 15:52:32 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/13 14:13:19 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Bureaucrat::Bureaucrat(std::string _name, int _grade) : name(_name), grade(_grad
         throw Bureaucrat::GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat & tmp) {
+Bureaucrat::Bureaucrat(const Bureaucrat & tmp) : name(tmp.getName()) {
     *this = tmp;
 }
 
@@ -85,7 +85,7 @@ std::ostream & operator << (std::ostream & out, const Bureaucrat & b) {
 void    Bureaucrat::executeForm(Form const & form) {
     try {
         form.execute(*this);
-        std::cout << this->name << " executed" << form.getName() << '\n';
+        std::cout << this->name << " executed " << form.getName() << '\n';
     } catch (std::exception & e) {
         std::cout << e.what() << '\n';
     }

@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:52:43 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/27 15:52:55 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/13 12:52:18 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Form::Form(std::string name, int gradeToSigned, int gradeToExecute) : _name(name
 }
 
 Form::Form(const Form & src) : _name(src.getName()), _gradeToSigned(src.getGradeToSigned()), _gradeToExecute(src.getGradeToExecute()), _isSigned(src.getIsSigned()) {
-    // *this = src;
+    *this = src;
 }
 
 Form::~Form() { }

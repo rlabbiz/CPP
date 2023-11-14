@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 17:08:45 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/26 13:53:22 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/13 12:01:19 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ Form::Form() : _name("default"), _gradeToSigned(50), _gradeToExecute(10), _isSig
 
 Form::Form(std::string name) : _name(name), _gradeToSigned(50), _gradeToExecute(10), _isSigned(false) { }
 
-Form::Form(std::string name, int gradeToSigned) : _name(name), _gradeToSigned(gradeToSigned), _gradeToExecute(10), _isSigned(false) {
+Form::Form(std::string name, int gradeToSigned) : _name(name), _gradeToSigned(gradeToSigned),_gradeToExecute(10), _isSigned(false) {
     if (gradeToSigned < 1)
         throw Form::GradeTooHighException();
     else if (gradeToSigned > 150)
         throw Form::GradeTooLowException();
 }
 
-Form::Form(std::string name, int gradeToSigned, int gradeToExecute) : _name(name), _gradeToSigned(gradeToSigned), _gradeToExecute(gradeToExecute), _isSigned(false) {
+Form::Form(std::string name, int gradeToSigned, int gradeToExecute) : _name(name), _gradeToSigned(gradeToExecute), _gradeToExecute(gradeToExecute),_isSigned(false) {
     if (gradeToSigned < 1 || gradeToExecute < 1)
         throw Form::GradeTooHighException();
     else if (gradeToSigned > 150 || gradeToExecute > 150)
@@ -31,7 +31,7 @@ Form::Form(std::string name, int gradeToSigned, int gradeToExecute) : _name(name
 }
 
 Form::Form(const Form & src) : _name(src.getName()), _gradeToSigned(src.getGradeToSigned()), _gradeToExecute(src.getGradeToExecute()), _isSigned(src.getIsSigned()) {
-    // *this = src;
+    *this = src;
 }
 
 Form::~Form() { }

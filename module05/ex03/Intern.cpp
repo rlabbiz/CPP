@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 10:19:01 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/10/30 19:52:37 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/14 11:35:42 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ Form    *Intern::makeForm(std::string form, std::string target) {
     }
     if (check)
         return NULL;
-    switch (i) {
+    switch (i) 
+    {
         case 0:
             return new RobotomyRequestForm(target);
         case 1:
