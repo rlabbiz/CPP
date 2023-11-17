@@ -6,15 +6,15 @@
 #    By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/19 21:41:15 by rlabbiz           #+#    #+#              #
-#    Updated: 2023/11/13 08:56:56 by rlabbiz          ###   ########.fr        #
+#    Updated: 2023/11/17 20:50:55 by rlabbiz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 C++			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
 NAME		= out
-DFS			= main.hpp
-OBJ			= main.o
+DFS			= Serializer.hpp
+OBJ			= main.o Serializer.o
 
 %.o: %.cpp $(DFS)
 	$(C++) $(FLAGS) -c $< -o $@
