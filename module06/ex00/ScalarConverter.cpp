@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:24:23 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/07 12:06:24 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/17 07:40:58 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void    ScalarConverter::convert(const char * str) {
             this->_double   = static_cast<double>(this->_char);
             break;
         case INT:
-            this->_int      = ft_toInt(str);
+            this->_int      = std::atoi(str);
             this->_char     = static_cast<char >(this->_int);
             this->_float    = static_cast<float>(this->_int);
             this->_double   = static_cast<double>(this->_int);
@@ -61,7 +61,7 @@ void    ScalarConverter::convert(const char * str) {
         case FLOAT:
             if (this->_psude != NONE_PSUDE)
                 return ;
-            this->_float    = ft_toFloat(str);
+            this->_float    = std::atof(str);
             this->_char     = static_cast<char >(this->_float);
             this->_int      = static_cast<int>(this->_float);
             this->_double   = static_cast<double>(this->_float);
@@ -69,7 +69,7 @@ void    ScalarConverter::convert(const char * str) {
         case DOUBLE:
             if (this->_psude != NONE_PSUDE)
                 return ;
-            this->_double   = ft_toDouble(str);
+            this->_double   = std::atof(str);
             this->_char     = static_cast<char >(this->_double);
             this->_int      = static_cast<int>(this->_double);
             this->_float    = static_cast<float>(this->_double);
@@ -157,9 +157,11 @@ bool ScalarConverter::isFloat(const std::string & str) {
 bool ScalarConverter::isDouble(const std::string & str) {
     if (str == "nan" || str == "-inf" || str == "+inf")
         return findPsude(str);
-    if (str.at(0) < '0' || str.at(0) > '9')
-        return false;
     size_t  i = 0;
+    if (str.at(i) == '-' || str.at(i) == '+')
+        i++;
+    if (str.at(i) < '0' || str.at(i) > '9')
+        return false;
     bool    point = false;
     while (i < str.length()) {
         if (str.at(i) == '.' && point)
@@ -173,33 +175,8 @@ bool ScalarConverter::isDouble(const std::string & str) {
     return true;
 }
 
-int     ft_toInt(const char * str) {
-    std::stringstream ss(str);
-    int nbr;
-
-    ss >> nbr;
-    return nbr;
-}
-
-float   ft_toFloat(const char * str) {
-    std::stringstream ss(str);
-    float nbr;
-
-    ss >> nbr;
-    return nbr;
-}
-
-double  ft_toDouble(const char * str) {
-    std::stringstream ss(str);
-    double nbr;
-
-    ss >> nbr;
-    return nbr;
-}
-
 std::string  getPsudeType(n_psude type, int var_type) {
-    switch (type)
-    {
+    switch (type) {
     case NANF:
         if (var_type)
             return "nan";
@@ -227,9 +204,9 @@ std::string  getPsudeType(n_psude type, int var_type) {
             return "+inff";
     case INF:
         if (var_type)
-            return "INF";
+            return "inf";
         else
-            return "INFF";
+            return "inff";
     default:
         break;
     }
@@ -242,7 +219,7 @@ std::ostream & operator << (std::ostream & out, const ScalarConverter & scal) {
         out << "impossible" << '\n';
     else {
         if (isprint(scal.getChar()))
-            out << scal.getChar() << '\n';
+            out << '\'' << scal.getChar() << '\'' << '\n';
         else
             out << "Non displayable" << '\n';
     }

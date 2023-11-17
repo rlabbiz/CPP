@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:24:26 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/06 21:53:57 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/14 17:13:26 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,9 @@ public:
 
 };
 
-int     ft_toInt(const char * str);
-float   ft_toFloat(const char * str);
-double  ft_toDouble(const char * str);
+// int     ft_toInt(const char * str);
+// float   ft_toFloat(const char * str);
+// double  ft_toDouble(const char * str);
 
 std::ostream & operator << (std::ostream & out, const ScalarConverter & scal);
 
