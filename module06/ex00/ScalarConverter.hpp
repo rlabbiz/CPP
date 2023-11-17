@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:24:26 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/14 17:13:26 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/17 07:47:20 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ typedef enum e_psude {
     NAN,
     NONE_PSUDE,
 }   n_psude;
-
 
 class ScalarConverter {
 private:
@@ -77,12 +76,7 @@ public:
     bool    isInt(const std::string & str) const ;
     bool    isFloat(const std::string & str);
     bool    isDouble(const std::string & str);
-
 };
-
-// int     ft_toInt(const char * str);
-// float   ft_toFloat(const char * str);
-// double  ft_toDouble(const char * str);
 
 std::ostream & operator << (std::ostream & out, const ScalarConverter & scal);
 
