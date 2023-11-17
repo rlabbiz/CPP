@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:49:29 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/16 15:15:21 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/16 16:01:28 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
-    exit(0);
     //SCOPE
     {
         Array<int> tmp = numbers;
@@ -45,7 +44,6 @@ int main(int, char**)
     }
     catch(const std::exception& e)
     {
-        std::cout << "here" << '\n';
         std::cerr << e.what() << '\n';
     }
     try
