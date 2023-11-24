@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:24:26 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/24 11:21:10 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/24 17:11:16 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,18 +60,18 @@ public:
     void    setIntPossible(bool impossible);
     void    setType(e_type type);
     void    setChar(char c);
-    void    setInt(long nbr);
+    void    setInt(long int nbr);
     void    setFloat(float nbr);
     void    setDouble(double nbr);
 
-    bool    getImpossible(void) const ;
-    bool    getIntPossible(void) const ;
-    n_type  getType(void) const ;
-    n_psude getPsude(void) const ;
-    char    getChar(void) const ;
-    long    getInt(void) const ;
-    float   getFloat(void) const ;
-    double  getDouble(void) const ;
+    bool        getImpossible(void) const ;
+    bool        getIntPossible(void) const ;
+    n_type      getType(void) const ;
+    n_psude     getPsude(void) const ;
+    char        getChar(void) const ;
+    long int    getInt(void) const ;
+    float       getFloat(void) const ;
+    double      getDouble(void) const ;
     
     void    convert(const char * str);
     void    findType(const std::string & str);

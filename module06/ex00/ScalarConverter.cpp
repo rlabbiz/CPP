@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:24:23 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/24 17:08:21 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/24 17:10:37 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,18 @@ void    ScalarConverter::setImpossible(bool impossible) { this->_impossible = im
 void    ScalarConverter::setIntPossible(bool intPossible) { this->_intPossible = intPossible; }
 void    ScalarConverter::setType(e_type type) { this->_type = type; }
 void    ScalarConverter::setChar(char c) { this->_char = c; }
-void    ScalarConverter::setInt(long nbr) { this->_int = nbr; }
+void    ScalarConverter::setInt(long int nbr) { this->_int = nbr; }
 void    ScalarConverter::setFloat(float nbr) { this->_float = nbr; }
 void    ScalarConverter::setDouble(double nbr) { this->_double = nbr; }
 
-bool    ScalarConverter::getImpossible(void) const { return this->_impossible; }
-bool    ScalarConverter::getIntPossible(void) const { return this->_intPossible; }
-n_type  ScalarConverter::getType(void) const { return this->_type; }
-n_psude ScalarConverter::getPsude(void) const { return this->_psude; }
-char    ScalarConverter::getChar(void) const { return this->_char; }
-long    ScalarConverter::getInt(void) const { return this->_int; }
-float   ScalarConverter::getFloat(void) const { return this->_float; }
-double  ScalarConverter::getDouble(void) const { return this->_double; }
+bool        ScalarConverter::getImpossible(void) const { return this->_impossible; }
+bool        ScalarConverter::getIntPossible(void) const { return this->_intPossible; }
+n_type      ScalarConverter::getType(void) const { return this->_type; }
+n_psude     ScalarConverter::getPsude(void) const { return this->_psude; }
+char        ScalarConverter::getChar(void) const { return this->_char; }
+long int    ScalarConverter::getInt(void) const { return this->_int; }
+float       ScalarConverter::getFloat(void) const { return this->_float; }
+double      ScalarConverter::getDouble(void) const { return this->_double; }
 
 void    ScalarConverter::checkInt(std::string str) {
     if (str.length() >= 11) {
@@ -62,7 +62,7 @@ void    ScalarConverter::checkInt(std::string str) {
         return ;
     }
 
-    long nbr = std::stol(str);
+    long int nbr = std::stol(str);
     if (nbr < INT_MIN || nbr > INT_MAX) 
         this->_type = DOUBLE;
 }
