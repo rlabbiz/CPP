@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:24:23 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/24 11:24:30 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/24 17:08:21 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ScalarConverter::ScalarConverter() {
     this->_double       = 0.0;
 }
 
-ScalarConverter::ScalarConverter(ScalarConverter const & src) { (void)src; }
+ScalarConverter::ScalarConverter(ScalarConverter const & src) { *this = src; }
 
 ScalarConverter::~ScalarConverter() {}
 
