@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 08:56:36 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/17 20:51:51 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/22 11:27:41 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int main(void) {
     std::cout << data << '\n';
     std::cout << newData << '\n';
     
+    delete data;
     return 0;
 }
