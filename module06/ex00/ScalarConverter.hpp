@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:24:26 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/24 17:11:16 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/28 12:35:13 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <limits>
 #include <cctype>
 #include <climits>
+#include <cstdlib>
 
 typedef enum e_type {
     CHAR,
@@ -38,52 +39,35 @@ typedef enum e_psude {
     NONE_PSUDE,
 }   n_psude;
 
-class ScalarConverter {
-private:
+typedef struct s_var {
     bool    _impossible;
     bool    _intPossible;
     n_type  _type;
     n_psude _psude;
     char    _char;
-    long     _int;
+    long    _int;
     float   _float;
     double  _double;
+}   t_var;
 
-public:
+class ScalarConverter {
+private:
+    static void         findType(const std::string & str, t_var & var);
+    static bool         findPsude(const std::string & str, t_var & var);
+    static void         checkInt(std::string str, t_var & var);
+    static std::string  getPsudeType(n_psude type, int var_type);
+    
+    static bool isChar(const std::string & str);
+    static bool isInt(const std::string & str);
+    static bool isFloat(const std::string & str, t_var & var);
+    static bool isDouble(const std::string & str, t_var & var);
+
+    static void print(t_var & var);
+
     ScalarConverter();
-    ScalarConverter(ScalarConverter const & src);
     ~ScalarConverter();
-        
-    ScalarConverter & operator = (ScalarConverter const & rhs);
-
-    void    setImpossible(bool impossible);
-    void    setIntPossible(bool impossible);
-    void    setType(e_type type);
-    void    setChar(char c);
-    void    setInt(long int nbr);
-    void    setFloat(float nbr);
-    void    setDouble(double nbr);
-
-    bool        getImpossible(void) const ;
-    bool        getIntPossible(void) const ;
-    n_type      getType(void) const ;
-    n_psude     getPsude(void) const ;
-    char        getChar(void) const ;
-    long int    getInt(void) const ;
-    float       getFloat(void) const ;
-    double      getDouble(void) const ;
-    
-    void    convert(const char * str);
-    void    findType(const std::string & str);
-    bool    findPsude(const std::string & str);
-    void    checkInt(std::string str);
-    
-    bool    isChar(const std::string & str) const ;
-    bool    isInt(const std::string & str) const ;
-    bool    isFloat(const std::string & str);
-    bool    isDouble(const std::string & str);
+public: 
+    static void convert(const char * str);
 };
-
-std::ostream & operator << (std::ostream & out, const ScalarConverter & scal);
 
 #endif

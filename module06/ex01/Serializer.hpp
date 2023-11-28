@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 08:56:39 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/17 20:47:50 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/28 12:46:13 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,10 @@ struct Data {
 };
 
 class   Serializer {
-public:
+private:
     Serializer();
-    Serializer(const Serializer & src);
     ~Serializer();
-    
-    Serializer & operator = (const Serializer & rhs);
-    
+public:
     static  uintptr_t   serialize(Data* ptr);
     static  Data*       deserialize(uintptr_t raw);
 };
