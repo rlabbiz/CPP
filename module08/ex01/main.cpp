@@ -5,23 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 09:25:58 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/20 09:08:53 by rlabbiz          ###   ########.fr       */
+/*   Created: 2023/11/20 12:19:17 by rlabbiz           #+#    #+#             */
+/*   Updated: 2023/11/21 11:00:23 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyFind.hpp"
+#include "Span.hpp"
 
-// please do more tests (I just test with vectors)
+int main()
+{
+    Span sp = Span(5);
+    
+    sp.addNumber(6);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
 
-int main(void) {
-    std::vector<int> vector;
-
-    vector.push_back(1);
-    vector.push_back(2);
-    try {
-        std::cout << easyFind(vector, 4) << '\n';
-    } catch (const char * error) {
-        std::cout << error << '\n';
-    }
+    return 0;
 }

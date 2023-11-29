@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyFind.hpp                                       :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 09:25:56 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/28 20:38:23 by rlabbiz          ###   ########.fr       */
+/*   Created: 2023/11/21 09:18:06 by rlabbiz           #+#    #+#             */
+/*   Updated: 2023/11/25 17:07:44 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
+#ifndef MUTANTSTACK_HPP
+#define MUTANTSTACK_HPP
 
 #include <iostream>
-#include <list>
-#include <vector>
 #include <deque>
-#include <queue>
-#include <algorithm>
-#include <exception>
+#include <stack>
 
-
-template <typename T> int  easyFind(T & container, int element) {
-    typename T::iterator    it;
-
-    it = std::find(container.begin(), container.end(), element);
-    if (it == container.end())
-        throw "Element Not Found.";
-    return *it;
-}
+template <class T, class container = std::deque<T> > 
+class MutantStack : public std::stack<T, container> {
+public:
+    MutantStack() : std::stack<T, container> () {};
+    typedef typename container::iterator    iterator;
+    typename container::iterator begin(void) { return this->c.begin(); }
+    typename container::iterator end(void) { return this->c.end(); }
+    
+};
 
 #endif
