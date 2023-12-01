@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:15:15 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/21 10:41:35 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/12/01 16:50:26 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void    Span::addNumber(int n) {
     this->_len++;
 }
 
-void    Span::addIteratorRang(std::vector<int>::iterator first, std::vector<int>::iterator last) {
+void    Span::addNumber(std::vector<int>::iterator first, std::vector<int>::iterator last) {
     for (; first != last; first++) {
         this->addNumber(*first);
     }     

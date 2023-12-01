@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:15:13 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/21 11:00:26 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/12/01 16:50:22 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ public:
     int                 getCapacity(void) const ;
 
     void    addNumber(int n);
-    void    addIteratorRang(std::vector<int>::iterator first, std::vector<int>::iterator last);
+    void    addNumber(std::vector<int>::iterator first, std::vector<int>::iterator last);
     int     shortestSpan(void) const ;
     int     longestSpan(void) const ;
 };
