@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:24:26 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/28 12:35:13 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/11/29 21:01:17 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,7 @@ typedef enum e_type {
     CHAR,
     INT,
     NOT_INT,
-    FLOAT,
-    DOUBLE,
-    NONE_TYPE,
-}   n_type;
-
-typedef enum e_psude {
+    FLOAT,ef enum e_psude {
     PLUS_INFF,
     INFF,
     NANF,
@@ -37,6 +32,11 @@ typedef enum e_psude {
     INF,
     NAN,
     NONE_PSUDE,
+    DOUBLE,
+    NONE_TYPE,
+}   n_type;
+
+typed
 }   n_psude;
 
 typedef struct s_var {
