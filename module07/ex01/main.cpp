@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 12:55:59 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/15 14:36:50 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/12/01 15:28:43 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(void) {
     str[1] = 'b';
     str[2] = 'c';
     
-    iter<char >(str, 3, print<char >);
+    iter<char >(str, 3, dispaly<char >);
 
     delete[] str;
 }

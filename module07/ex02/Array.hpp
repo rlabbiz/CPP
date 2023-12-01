@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:49:25 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/16 16:34:37 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/12/01 15:38:52 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,18 @@ private:
     int    _size;
 public:
     Array() {
-        this->_size = 3;
-        this->_array = new T[3];
+        this->_size = 0;
+        this->_array = NULL;
     }
     Array(unsigned int n) {
         this->_size = n;
         this->_array = new T[n];
+        for (unsigned int i = 0; i < n; i++) {
+            this->_array[i] = T();
+        }
     }
     Array(const Array & src) {
-        this->_size = 3;
-        this->_array = new T[3];
+        this->_array = NULL;
         *this = src;
     }
     ~Array() {
@@ -48,23 +50,18 @@ public:
     };
     
     Array & operator = (const Array & rhs) {
-        delete[] this->_array;
+        if (this->_array)
+            delete[] this->_array;
 
-        this->_array = new T[rhs.size()];
-        this->_size = rhs.size();
+        this->_size     = rhs.size();
+        this->_array    = new T[rhs.size()];
         for (int i = 0; i < rhs.size(); i++) {
             (*this)[i] = rhs[i];
         }
         return *this;
     }
-    
-    T   operator [] (int idx) const {
-        if (idx < 0 || idx >= this->size())
-            throw Array::OUTOFBOUNDS();
-        return  this->_array[idx];
-    }
 
-    T & operator [] (int idx) {
+    T & operator [] (int idx) const {
         if (idx < 0 || idx >= this->size())
             throw Array::OUTOFBOUNDS();
         return this->_array[idx];
