@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:15:15 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/12/01 16:50:26 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/12/02 23:47:17 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int                 Span::getCapacity(void) const { return this->_capacity; }
 
 void    Span::addNumber(int n) {
     if (this->_len == this->_capacity)
-        throw   "No space left to add new number.";
+        throw std::out_of_range("No space left to add new elemets.");
     this->_array.push_back(n);
     this->_len++;
 }
@@ -48,19 +48,26 @@ void    Span::addNumber(std::vector<int>::iterator first, std::vector<int>::iter
 
 int Span::shortestSpan(void) const {
     if (this->_len <= 1)
-        throw "Not enough numbers.";
+        throw std::out_of_range("Not enough elements.");
 
-    std::vector<int>::const_iterator lastElement   = this->_array.end();
-    lastElement--;
-    std::vector<int>::const_iterator firstElement  = this->_array.end();
-    firstElement--;
-    firstElement--;
-    return *lastElement - *firstElement;
+    int min = this->longestSpan();
+    int tmp = 0;
+
+    for (std::vector<int>::const_iterator it = this->_array.begin(); it != this->_array.end(); it++) {
+        for (std::vector<int>::const_iterator it1 = this->_array.begin(); it1 != this->_array.end(); it1++) {
+            if (it == it1)
+                continue ;
+            tmp = std::abs(*it - *it1);
+            if (tmp < min)
+                min = tmp;
+        }
+    }
+    return min;
 }
 
 int Span::longestSpan(void) const {
     if (this->_len <= 1)
-        throw "Not enough numbers.";
+        throw std::out_of_range("Not enough elements.");
 
     std::vector<int>::const_iterator    minNumber = std::min_element(this->_array.begin(), this->_array.end());
     std::vector<int>::const_iterator    maxNumber = std::max_element(this->_array.begin(), this->_array.end());

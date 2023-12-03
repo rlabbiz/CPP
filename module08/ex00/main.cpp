@@ -6,13 +6,11 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 09:25:58 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/20 09:08:53 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/12/02 22:57:30 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyFind.hpp"
-
-// please do more tests (I just test with vectors)
 
 int main(void) {
     std::vector<int> vector;
@@ -21,7 +19,7 @@ int main(void) {
     vector.push_back(2);
     try {
         std::cout << easyFind(vector, 4) << '\n';
-    } catch (const char * error) {
-        std::cout << error << '\n';
+    } catch (std::exception & e) {
+        std::cout << e.what() << '\n';
     }
 }
