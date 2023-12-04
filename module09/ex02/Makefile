@@ -6,15 +6,15 @@
 #    By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/19 21:41:15 by rlabbiz           #+#    #+#              #
-#    Updated: 2023/11/17 09:25:53 by rlabbiz          ###   ########.fr        #
+#    Updated: 2023/12/04 14:13:49 by rlabbiz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 C++			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
-NAME		= easyFind
-DFS			= easyFind.hpp
-OBJ			= main.o
+NAME		= PmergeMe
+DFS			= PmergeMe.hpp
+OBJ			= main.o PmergeMe.o
 
 %.o: %.cpp $(DFS)
 	$(C++) $(FLAGS) -c $< -o $@
