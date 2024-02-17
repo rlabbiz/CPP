@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:31:29 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/23 13:17:02 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/12/15 21:27:14 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ Btc::Btc(const Btc& src) { *this = src; }
 
 Btc::~Btc() {}
 
-Btc&    Btc::operator = (const Btc& rhs) { (void)rhs; return *this; }
+Btc&    Btc::operator = (const Btc& rhs) {
+    this->_map = rhs.getMap();
+    return *this;
+}
 
 const char * Btc::InvalidDate::what() const throw() {
     return ("Invalid Date");

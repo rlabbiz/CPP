@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 09:25:56 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/12/02 23:03:25 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/12/03 18:52:39 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 #include <queue>
 #include <algorithm>
 #include <exception>
-
 
 template <typename T> int  easyFind(T & container, int element) {
     typename T::iterator    it;

@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:31:25 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/23 20:46:02 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/12/14 12:48:58 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@
 #include <algorithm>
 #include <fstream>
 #include <string>
+#include <sstream>
 #include <exception>
 
 class Btc {
 private:
-    std::map<std::string, double>  _map;
-
     Btc();
+    
+    std::map<std::string, double>  _map;
     
     void        storeData(std::string & line);
     std::string getLowerDate(std::string & date) const ;

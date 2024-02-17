@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:31:27 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/11/23 20:45:56 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/12/14 12:53:11 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 Btc*    insertDb(const char * fileName) {
     std::ifstream file(fileName);
-    if (!file.is_open())
-        return NULL;
     try {
         Btc* btc = new Btc(file);
         file.close();
         return btc;
     } catch (std::exception & e) {
-        std::cout << e.what() << '\n';
+        std::cerr << e.what() << '\n';
     }
     return NULL;
 }
@@ -53,7 +51,7 @@ int checkDateRange(std::string str) {
         std::cout << "Error: bad input => " << str << '\n';
         return 1;
     }
-    return 0;   
+    return 0;
 }
 
 int checkDate(std::string str) {
@@ -80,10 +78,22 @@ int checkDate(std::string str) {
 }
 
 int checkValidDate(std::string line) {
-    size_t      idx     = line.find("|");
-    std::string date    = line.substr(0, idx);
-    std::string prix    = line.substr(idx + 1);
+    std::stringstream s(line);
+    
+    std::string date;
+    std::string prix;
+    std::string rest;
 
+    s >> date;
+    s >> prix;
+    prix.clear();
+    s >> prix;
+    s >> rest;
+
+    if (date.empty() || prix.empty() || !rest.empty()) {
+        std::cerr << "Error: bad input => " << line << '\n';
+        return 1;
+    }
     if (checkPrix(prix) || checkDate(date))
         return 1;
     return 0;
@@ -103,15 +113,36 @@ void    printLine(Btc* btc, std::string line) {
     double      prix    = std::stod(s_prix);
     
     s_date.erase(std::remove(s_date.begin(), s_date.end(), ' '));
-    double      key     = btc->at(s_date);
+    double  key = btc->at(s_date);
     
     std::cout << s_date << " => " << prix << " = " << key * prix <<'\n';
+}
+
+int checkFirstLine(std::string str) {
+    std::stringstream   s(str);
+    std::string         subString;
+    
+    s >> subString;
+    if (subString != "date")
+        return 1;
+    s >> subString;
+    if (subString != "|")
+        return 1;
+    s >> subString;
+    if (subString != "value")
+        return 1;
+    subString.clear();
+    s >> subString;
+    if (!subString.empty())
+        return 1;
+    return 0;
 }
 
 int main(int ac, char **av) {
 
     if (ac < 2) {
-        std::cout << "Error: could not open file." << '\n';
+        std::cerr << "Error: Bad arguments." << '\n';
+        std::cerr << "\tUsage: ./btc input.txt" << '\n';
         return 1;
     }
 
@@ -127,14 +158,25 @@ int main(int ac, char **av) {
 
     std::string line;
 
-    std::getline(file, line);
-    if (line.empty())
+    while (file) {
+        std::getline(file, line);
+        if (!line.empty()) {
+            break ;
+        }
+    }
+    if (line.empty()) {
+        std::cerr << "Error: file is empty." << '\n';
         return 1;
+    }
+    if (checkFirstLine(line)) {
+        std::cerr << "Error: invalid line: " << line << '\n';
+        return 1;
+    }
     line.clear();
     while (file) {
         std::getline(file, line);
         if (line.empty())
-            break ;
+            continue ;
         printLine(btc, line);
         line.clear();
     }
